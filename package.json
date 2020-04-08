@@ -1,0 +1,24 @@
+{
+  "name": "scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thudilie/scraper.git"
+  },
+  "keywords": [
+    "selenium",
+    "fritz-box",
+    "scrape"
+  ],
+  "author": "Thuy-Anh Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Thudilie/scraper/issues"
+  },
+  "homepage": "https://github.com/Thudilie/scraper#readme"
+}
