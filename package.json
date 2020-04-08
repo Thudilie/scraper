@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Thudilie/scraper/issues"
   },
-  "homepage": "https://github.com/Thudilie/scraper#readme"
+  "homepage": "https://github.com/Thudilie/scraper#readme",
+  "dependencies": {
+    "selenium-webdriver": "^4.0.0-alpha.7"
+  }
 }
