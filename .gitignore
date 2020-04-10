@@ -3,3 +3,4 @@
 app/node_modules
 app/build
 backend/node_modules
+/sheets
