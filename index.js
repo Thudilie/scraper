@@ -2,7 +2,7 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
 const firefox = require('selenium-webdriver/firefox');
 require('dotenv').config();
 
-const options = new firefox.Options();
+const options = new firefox.Options().headless();
 options.setPreference('browser.download.dir','/Users/thuy-anh.nguyen/Desktop/scraper/sheets');
 options.setPreference('browser.download.folderList',2);
 options.setPreference('browser.download.manager.showWhenStarting',false)
@@ -11,12 +11,10 @@ options.setPreference('browser.helperApps.neverAsk.saveToDisk','text/csv')
 const PAGE = process.env.PAGE
 const PASSWORD = process.env.PW_FRITZ
 
-async function startserver() {
+ const startserver = async () => {
     let driver = await new Builder().forBrowser('firefox').setFirefoxOptions(options).build();
     try {
-        // Navigate to Url
         await driver.get(PAGE);
-        // Enter text 'cheese' and perform keyboard action 'Enter'
         await driver.findElement(By.name('uiPass')).sendKeys(PASSWORD, Key.ENTER);
 
         let tel_tab = By.id('tel');
@@ -32,6 +30,7 @@ async function startserver() {
         let download = By.name('export')
         await driver.wait(until.elementLocated(download, 10000));
         let download_found = await driver.wait(until.elementIsVisible(driver.findElement(download)), 10000);
+        await driver.sleep(20)
         await download_found.click();
     }
     finally{
