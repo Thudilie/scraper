@@ -2,14 +2,18 @@
   "name": "api",
   "version": "1.0.0",
   "description": "api endpoint to run selenium script",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "express": "^4.17.1",
     "node-cmd": "^3.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.5"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx babel-node server.js"
   },
   "keywords": [
     "selenium",
