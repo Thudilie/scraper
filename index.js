@@ -32,6 +32,7 @@ const startserver = async () => {
         let download_found = await driver.wait(until.elementIsVisible(driver.findElement(download)), 10000);
         await driver.sleep(20)
         await download_found.click();
+        console.log('download finished')
     }
     finally{
         driver.quit();

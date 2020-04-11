@@ -3,23 +3,28 @@ import cmd from 'node-cmd'
 
 const app = express();
 
-app.get('/helloworld', (req, res) => {
+app.get('/fritzbox', (req, res) => {
   cmd.get(
     `
         cd ..
         npm start
-        ls
     `,
-      function(err, data, stderr){
+      (err, data) => {
           if (!err) {
-            console.log('the node-cmd cloned dir contains these files :\n\n',data)
+            data=data.split("\\n").join(' ')
+            data=data.split("> node index")
+            res.status(200).json({
+              'command':data[0],
+              'status':data[1]
+            })
           } else {
-            console.log('error', err)
+            res.status(500).json({
+              'command':data[0],
+              'status': '500 -  Internal server error'
+            })
           }
-
       }
   );
-  res.send('HelloWorld')
 })
 
 app.listen(8000, () => { console.log('listening on port 8000')})
