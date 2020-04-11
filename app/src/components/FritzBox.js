@@ -1,14 +1,21 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-const FritzBox = ({articleName, setArticleInfo}) => {
+const FritzBox = () => {
   const[load,setloading] = useState('start loading');
-  const extractfritzbox = async() =>{
-    setloading('finish loading')
+  const[loadingGif,setloadingGif] = useState('');
+
+  const extractfritzbox = async () => {
+    setloading('download started');
+    setloadingGif('load')
+    const result = await fetch(`/fritzbox`)
+    const body = await result.json();
+    setloadingGif('finish')
+    setloading(body.status);
   }
   return (
     <>
       <h2>start extracting fritz box</h2>
-        <p>{load}</p>
+        <p className={loadingGif}>{load}</p>
         <button onClick={()=>extractfritzbox()}>start</button>
     </>
    );
