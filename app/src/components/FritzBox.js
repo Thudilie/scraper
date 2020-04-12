@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react';
 import './../css/FritzBox.css'
 
 const FritzBox = () => {
-  const[load,setloading] = useState({'message':'start loading','gif':'finish', 'timer': false});
+  const[load,setloading] = useState({'message':'','gif':'', 'timer': false});
   const[time, setTime] = useState(0);
 
   const extractfritzbox = async () => {
@@ -21,14 +21,19 @@ const FritzBox = () => {
     }
   },[load.timer,time]);
 
+  let text="Die durchschnittliche Dauer dieser Aktion dauert 20-30 Sekunden."
   return (
-    <>
-      <h2>start extracting fritz box</h2>
-        <div>{time}</div>
+    <div className="fritzbox">
+      <div className="text">
+        <h2>FritzBox</h2>
+        <div className="text_sub">{load.message}</div>
+      </div>
+      <div className="loading">
         <div className={load.gif}></div>
-        <p>{load.message}</p>
-        <button disabled={load.timer} onClick={()=>extractfritzbox()}>start</button>
-    </>
+        <div className='loading_timeup'>{time==0 && !load.timer ? text : time}</div>
+      </div>
+      <button disabled={load.timer} onClick={()=>extractfritzbox()}>start</button>
+    </div>
    );
 }
 

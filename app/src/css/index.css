@@ -12,6 +12,16 @@ code {
     monospace;
 }
 
+p{
+  margin:0;
+  padding:0;
+}
+
 :root {
   --primary-color: #40a8e4;
+}
+
+main{
+  max-width: 900px;
+  margin: auto;
 }

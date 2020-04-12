@@ -6,6 +6,7 @@
   height: 30px;
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
+  margin: auto;
 }
 
 /* Safari */
@@ -23,4 +24,64 @@
   color: var(--primary-color);
   content:'✓';
   font-size: 30px;
+  margin-left: 80px;
+}
+
+.fritzbox{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid grey;
+  padding:0;
+  margin:0;
+  border-radius: 3px;
+}
+
+.loading{
+  min-height: 20px;
+  position: relative;
+}
+
+.loading_timeup{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button{
+  background: var(--primary-color);
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 15px 0 0 0;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+button[disabled]{
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.text{
+  padding: 15px 0 15px 0;
+  margin: 0 15px 15px;
+  border-bottom: 1px solid grey;
+}
+
+.text_sub{
+  margin-top: 5px;
+}
+
+h2{
+  margin:0;
+  padding:0;
 }
