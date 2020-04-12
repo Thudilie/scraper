@@ -4,8 +4,10 @@
   "description": "api endpoint to run selenium script",
   "main": "server.js",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "node-cmd": "^3.0.0"
+    "node-cmd": "^3.0.0",
+    "selenium-webdriver": "^4.0.0-alpha.7"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
