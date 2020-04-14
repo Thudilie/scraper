@@ -21,7 +21,7 @@ const FritzBox = () => {
     }
   },[load.timer,time]);
 
-  let text="Die durchschnittliche Dauer dieser Aktion dauert 20-30 Sekunden."
+  let text='Die durchschnittliche Dauer dieser Aktion dauert 20-30 Sekunden.'
   return (
     <div className="fritzbox">
       <div className="text">
@@ -30,7 +30,7 @@ const FritzBox = () => {
       </div>
       <div className="loading">
         <div className={load.gif}></div>
-        <div className='loading_timeup'>{time==0 && !load.timer ? text : time}</div>
+        <div className='loading_timeup'>{time===0 && !load.timer ? text : time}</div>
       </div>
       <button disabled={load.timer} onClick={()=>extractfritzbox()}>start</button>
     </div>

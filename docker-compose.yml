@@ -1,0 +1,19 @@
+version: "3"
+services:
+  frontend:
+    container_name: react
+    restart: always
+    build: ./app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    stdin_open: true
+  backend:
+    container_name: backend
+    restart: always
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./sheets:${DOWNLOAD_DIR}
