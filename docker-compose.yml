@@ -17,3 +17,7 @@ services:
       - "8000:8000"
     volumes:
       - ./sheets:${DOWNLOAD_DIR}
+    environment:
+      - PAGE=${PAGE}
+      - PW_FRITZ=${PW_FRITZ}
+      - DOWNLOAD_DIR=${DOWNLOAD_DIR}
